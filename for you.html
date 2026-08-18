@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Portfolio Ahmad — Web Developer & Designer">
+
+    <title>Ahmad — Web Developer</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+<style>
+
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #090909;
+    color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =====================================
+   VARIABLES
+===================================== */
+
+:root {
+
+    --bg: #090909;
+
+    --card: #111111;
+
+    --card2: #151515;
+
+    --text: #f5f5f5;
+
+    --muted: #8c8c8c;
+
+    --line: rgba(255,255,255,.08);
+
+    --accent: #d6ff3f;
+
+}
+
+
+/* =====================================
+   NOISE
+===================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .025;
+
+    z-index: 1000;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+
+}
+
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 22px 6%;
+
+    z-index: 100;
+
+    transition: .3s;
+
+}
+
+.navbar.scrolled {
+
+    background:
+        rgba(9,9,9,.82);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+.nav-container {
+
+    max-width: 1200px;
+
+    width: 100%;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+/* =====================================
+   AH.dev NAVBAR LOGO
+===================================== */
+
+/* =====================================
+   AH.dev TEXT LOGO
+===================================== */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    text-decoration: none;
+
+    transition: .3s ease;
+}
+
+.navbar-logo span {
+    color: var(--accent);
+}
+
+.navbar-logo:hover {
+    transform: translateY(-2px);
+}
+.nav-links {
+
+    display: flex;
+
+    gap: 28px;
+
+}
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 28px;
+
+    flex: 1;
+}
+
+.nav-links a:hover {
+
+    color: white;
+
+}
+
+.nav-cta {
+
+    padding:
+        11px 18px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: black;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+.nav-cta:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding:
+        160px 6% 100px;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.hero-container {
+
+    max-width: 1200px;
+
+    width: 100%;
+
+    margin: auto;
+
+}
+
+.eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+}
+
+.eyebrow::before {
+
+    content: "";
+
+    width: 7px;
+
+    height: 7px;
+
+    background: var(--accent);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px var(--accent);
+
+}
+
+.hero h1 {
+
+    max-width: 900px;
+
+    font-size:
+        clamp(48px, 8vw, 100px);
+
+    line-height: .98;
+
+    letter-spacing: -6px;
+
+    margin-bottom: 30px;
+
+}
+
+.hero h1 span {
+
+    color: var(--accent);
+
+}
+
+.hero-description {
+
+    max-width: 620px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+
+}
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+.primary-btn,
+.secondary-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        15px 23px;
+
+    border-radius: 50px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+.primary-btn {
+
+    background: var(--accent);
+
+    color: #080808;
+
+}
+
+.primary-btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(214,255,63,.15);
+
+}
+
+.secondary-btn {
+
+    border:
+        1px solid var(--line);
+
+    color: white;
+
+}
+
+.secondary-btn:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+/* =====================================
+   HERO BOTTOM
+===================================== */
+
+.hero-bottom {
+
+    margin-top: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid var(--line);
+
+    padding-top: 25px;
+
+}
+
+.hero-bottom p {
+
+    color: #666;
+
+    font-size: 11px;
+
+}
+
+.scroll-text {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #666;
+
+    font-size: 11px;
+
+}
+
+.scroll-line {
+
+    width: 50px;
+
+    height: 1px;
+
+    background: #555;
+
+}
+
+
+/* =====================================
+   SECTION
+===================================== */
+
+section {
+
+    padding:
+        120px 6%;
+
+}
+
+.section-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+.section-label {
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+
+}
+
+.section-title {
+
+    font-size:
+        clamp(34px, 5vw, 58px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+}
+
+
+/* =====================================
+   ABOUT
+===================================== */
+
+.about-grid {
+
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+}
+
+.about-text {
+
+    color: #999;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+}
+
+.about-text strong {
+
+    color: white;
+
+}
+
+.skills {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    align-content: flex-start;
+
+}
+
+.skill {
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 50px;
+
+    color: #aaa;
+
+    font-size: 11px;
+
+    transition: .3s;
+
+}
+
+.skill:hover {
+
+    border-color:
+        var(--accent);
+
+    color: var(--accent);
+
+}
+
+
+/* =====================================
+   PROJECT
+===================================== */
+
+.project-section {
+
+    background: #0c0c0c;
+
+}
+
+.project-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 30px;
+
+    margin-bottom: 45px;
+
+}
+
+.project-number {
+
+    color: #555;
+
+    font-size: 12px;
+
+}
+
+.project-card {
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background: var(--card);
+
+    transition: .4s;
+
+}
+
+.project-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(214,255,63,.2);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.3);
+
+}
+
+
+/* =====================================
+   PROJECT PREVIEW
+===================================== */
+
+.project-preview {
+
+    min-height: 500px;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #153b2e,
+            #0b1f18
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.project-preview::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(214,255,63,.15);
+
+    top: -250px;
+
+    right: -100px;
+
+}
+
+.browser {
+
+    position: absolute;
+
+    inset:
+        40px 50px;
+
+    background: #f7f3e8;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 35px 80px
+        rgba(0,0,0,.4);
+
+    color: #12372a;
+
+}
+
+.browser-top {
+
+    height: 35px;
+
+    background: #e7e3d9;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 0 13px;
+
+}
+
+.browser-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #999;
+
+}
+
+.browser-content {
+
+    height: calc(100% - 35px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+}
+
+.browser-content-inner {
+
+    max-width: 420px;
+
+}
+
+.browser-content small {
+
+    color: #b08a45;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+.browser-content h3 {
+
+    font-size:
+        clamp(28px, 5vw, 50px);
+
+    line-height: 1;
+
+    margin:
+        15px 0;
+
+    letter-spacing: -2px;
+
+}
+
+.browser-content p {
+
+    color: #64756d;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================
+   PROJECT INFO
+===================================== */
+
+.project-info {
+
+    padding: 35px;
+
+}
+
+.project-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+}
+
+.project-name {
+
+    font-size: 27px;
+
+    letter-spacing: -1px;
+
+}
+
+.project-type {
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+}
+
+.project-description {
+
+    max-width: 650px;
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin:
+        25px 0;
+
+}
+
+.project-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+
+}
+
+.project-tag {
+
+    padding:
+        7px 11px;
+
+    border-radius: 50px;
+
+    background: #1a1a1a;
+
+    color: #999;
+
+    font-size: 10px;
+
+}
+
+.project-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+.project-link:hover {
+
+    gap: 15px;
+
+}
+
+
+/* =====================================
+   PROCESS
+===================================== */
+
+.process-grid {
+
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
+
+}
+
+.process-card {
+
+    padding: 30px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 20px;
+
+    background: var(--card);
+
+}
+
+.process-number {
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    margin-bottom: 45px;
+
+}
+
+.process-card h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+}
+
+.process-card p {
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================
+   CTA
+===================================== */
+
+.cta-section {
+
+    padding-top: 80px;
+
+}
+
+.cta {
+
+    padding:
+        90px 40px;
+
+    border-radius: 30px;
+
+    background: var(--accent);
+
+    color: #090909;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.cta h2 {
+
+    font-size:
+        clamp(35px, 6vw, 65px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 20px;
+
+}
+
+.cta p {
+
+    max-width: 500px;
+
+    margin:
+        0 auto 30px;
+
+    color: #34400e;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+.cta-button {
+
+    display: inline-flex;
+
+    padding:
+        15px 24px;
+
+    background: #090909;
+
+    color: white;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+.cta-button:hover {
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+
+    padding:
+        45px 6%;
+
+}
+
+.footer-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-top:
+        1px solid var(--line);
+
+    padding-top: 25px;
+
+}
+
+.footer-container p {
+
+    color: #555;
+
+    font-size: 10px;
+
+}
+
+.social {
+
+    display: flex;
+
+    gap: 15px;
+
+}
+
+.social a {
+
+    color: #777;
+
+    font-size: 11px;
+
+    transition: .3s;
+
+}
+
+.social a:hover {
+
+    color: white;
+
+}
+
+
+/* =====================================
+   REVEAL
+===================================== */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        .8s ease;
+
+}
+
+.reveal.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:800px) {
+    
+   .navbar-logo {
+    width: 82px;
+    height: 36px;
+}
+
+.navbar-logo img {
+    width: 82px !important;
+    height: 36px !important;
+
+    max-width: 82px !important;
+    max-height: 36px !important;
+}
+
+.nav-links {
+    display: none;
+}
+
+    .hero {
+
+        padding:
+            140px 5% 70px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 52px;
+
+        letter-spacing: -3px;
+
+    }
+
+    .hero-bottom {
+
+        margin-top: 70px;
+
+    }
+
+    section {
+
+        padding:
+            80px 5%;
+
+    }
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+    .project-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+    .project-preview {
+
+        min-height: 350px;
+
+    }
+
+    .browser {
+
+        inset:
+            25px 15px;
+
+    }
+
+    .process-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .project-top {
+
+        flex-direction: column;
+
+    }
+
+    .project-info {
+
+        padding: 25px;
+
+    }
+
+    .footer-container {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     NAVBAR
+===================================== -->
+
+<nav class="navbar" id="navbar">
+
+    <div class="nav-container">
+
+        <!-- LOGO AH.dev -->
+      <a href="#" class="navbar-logo">
+    AH<span>.dev</span>
+</a>
+
+        <!-- NAVIGATION -->
+        <div class="nav-links">
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#process">
+                Process
+            </a>
+
+        </div>
+
+
+        <!-- CTA -->
+        <a
+            href="#contact"
+            class="nav-cta"
+        >
+            Let's Work
+        </a>
+
+    </div>
+
+</nav>
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+
+        <div class="eyebrow reveal">
+
+            AVAILABLE FOR PROJECTS
+
+        </div>
+
+
+        <h1 class="reveal">
+
+            I build websites
+
+            <br>
+
+            that look
+
+            <span>
+                different.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description reveal">
+
+            Kami membuat website modern,
+            responsive, dan berorientasi pada
+            pengalaman pengguna untuk bisnis,
+            komunitas, dan personal brand.
+
+        </p>
+
+
+        <div class="hero-buttons reveal">
+
+            <a
+                href="#projects"
+                class="primary-btn"
+            >
+                Lihat Project →
+            </a>
+
+
+            <a
+                href="#contact"
+                class="secondary-btn"
+            >
+                Hubungi Saya
+            </a>
+
+        </div>
+
+
+        <div class="hero-bottom reveal">
+
+            <p>
+                Web Developer & Designer
+            </p>
+
+
+            <div class="scroll-text">
+
+                Scroll to explore
+
+                <span class="scroll-line"></span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     ABOUT
+===================================== -->
+
+<section id="about">
+
+    <div class="section-container">
+
+
+        <div class="section-label reveal">
+
+            ABOUT ME
+
+        </div>
+
+
+        <h2 class="section-title reveal">
+
+            Dari ide sederhana
+
+            <br>
+
+            menjadi website nyata.
+
+        </h2>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text reveal">
+
+                <p>
+
+                    Kami
+
+                    <strong>
+                        Web Developer
+                    </strong>
+
+                    yang berfokus pada pembuatan
+                    website dengan tampilan modern,
+                    clean, responsive, dan nyaman
+                    digunakan.
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    Kami percaya sebuah website
+                    bukan hanya harus terlihat bagus,
+                    tetapi juga harus mampu
+                    menyampaikan identitas dan
+                    tujuan sebuah brand.
+
+                </p>
+
+            </div>
+
+
+            <div class="skills reveal">
+
+                <div class="skill">
+                    HTML
+                </div>
+
+                <div class="skill">
+                    CSS
+                </div>
+
+                <div class="skill">
+                    JavaScript
+                </div>
+
+                <div class="skill">
+                    Responsive Design
+                </div>
+
+                <div class="skill">
+                    UI Design
+                </div>
+
+                <div class="skill">
+                    Landing Page
+                </div>
+
+                <div class="skill">
+                    Website Development
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     PROJECT
+===================================== -->
+
+<section
+    class="project-section"
+    id="projects"
+>
+
+    <div class="section-container">
+
+
+        <div class="project-header">
+
+
+            <div>
+
+                <div class="section-label reveal">
+
+                    SELECTED PROJECT
+
+                </div>
+
+
+                <h2 class="section-title reveal">
+
+                    Work I've done.
+
+                </h2>
+
+            </div>
+
+
+            <div class="project-number reveal">
+
+                01 / 01
+
+            </div>
+
+
+        </div>
+
+
+        <!-- PROJECT CARD -->
+
+        <div class="project-card reveal">
+
+
+            <!-- WEBSITE PREVIEW -->
+
+            <div class="project-preview">
+
+
+                <div class="browser">
+
+
+                    <div class="browser-top">
+
+                        <span class="browser-dot"></span>
+
+                        <span class="browser-dot"></span>
+
+                        <span class="browser-dot"></span>
+
+                    </div>
+
+
+                    <div class="browser-content">
+
+
+                        <div class="browser-content-inner">
+
+                            <small>
+                                KELAS MURAJAAH ONLINE
+                            </small>
+
+
+                            <h3>
+                                Murajaahnesia
+                            </h3>
+
+
+                            <p>
+
+                                Jaga Hafalan.
+                                Kuatkan Murajaah.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- PROJECT INFORMATION -->
+
+            <div class="project-info">
+
+
+                <div class="project-top">
+
+
+                    <div>
+
+                        <h3 class="project-name">
+
+                            Murajaahnesia
+
+                        </h3>
+
+
+                        <p class="project-type">
+
+                            Website Kelas Murajaah Online
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-number">
+
+                        2026
+
+                    </div>
+
+
+                </div>
+
+
+                <p class="project-description">
+
+                    Website landing page premium untuk
+                    Murajaahnesia, sebuah kelas murajaah
+                    online. Website dirancang untuk
+                    memperkenalkan brand, menampilkan
+                    pencapaian member, membangun
+                    kepercayaan calon peserta, dan
+                    mengarahkan pengunjung menuju
+                    pendaftaran.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span class="project-tag">
+                        HTML
+                    </span>
+
+                    <span class="project-tag">
+                        CSS
+                    </span>
+
+                    <span class="project-tag">
+                        JavaScript
+                    </span>
+
+                    <span class="project-tag">
+                        Responsive
+                    </span>
+
+                    <span class="project-tag">
+                        UI Design
+                    </span>
+
+                    <span class="project-tag">
+                        Landing Page
+                    </span>
+
+                </div>
+
+
+                <!-- GANTI LINK INI
+                     DENGAN LINK WEBSITE MURAJAAHNESIA -->
+
+                <a
+                    href="https://syauqinf-cyber.github.io/murajaahnesia/"
+                    class="project-link"
+                >
+
+                    View Project
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     PROCESS
+===================================== -->
+
+<section id="process">
+
+    <div class="section-container">
+
+
+        <div class="section-label reveal">
+
+            MY PROCESS
+
+        </div>
+
+
+        <h2 class="section-title reveal">
+
+            Simple process.
+
+            <br>
+
+            Serious result.
+
+        </h2>
+
+
+        <div class="process-grid">
+
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    01
+                </div>
+
+
+                <h3>
+                    Understand
+                </h3>
+
+
+                <p>
+
+                    Memahami kebutuhan,
+                    tujuan, audience, dan
+                    identitas brand sebelum
+                    website dibuat.
+
+                </p>
+
+            </div>
+
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    02
+                </div>
+
+
+                <h3>
+                    Design & Build
+                </h3>
+
+
+                <p>
+
+                    Mengubah konsep menjadi
+                    desain dan website yang
+                    responsive serta nyaman
+                    digunakan.
+
+                </p>
+
+            </div>
+
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    03
+                </div>
+
+
+                <h3>
+                    Launch
+                </h3>
+
+
+                <p>
+
+                    Melakukan final check,
+                    optimasi tampilan,
+                    kemudian website siap
+                    digunakan.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     CTA
+===================================== -->
+
+<section
+    class="cta-section"
+    id="contact"
+>
+
+    <div class="section-container">
+
+
+        <div class="cta reveal">
+
+
+            <h2>
+
+                Have a project?
+
+                <br>
+
+                Let's build it.
+
+            </h2>
+
+
+            <p>
+
+                Punya ide website atau ingin
+                membuat bisnis terlihat lebih
+                profesional di internet?
+
+                Mari ngobrol dan wujudkan
+                idenya.
+
+            </p>
+
+
+            <!-- GANTI NOMOR WHATSAPP LU -->
+
+            <a
+                href="https://wa.me/628XXXXXXXXXX?text=Halo%2C%20saya%20tertarik%20untuk%20membuat%20website."
+                target="_blank"
+                rel="noopener"
+                class="cta-button"
+            >
+
+                Start a Conversation →
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <p>
+
+            © 2026 Ahmad.
+            Built with intention.
+
+        </p>
+
+
+        <div class="social">
+
+            <!-- GANTI INSTAGRAM LU -->
+
+            <a
+                href="https://instagram.com/"
+                target="_blank"
+            >
+                Instagram
+            </a>
+
+
+            <a href="#projects">
+                Projects
+            </a>
+
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+/* ===============================
+   NAVBAR
+================================ */
+
+const navbar =
+    document.getElementById("navbar");
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (window.scrollY > 40) {
+
+            navbar.classList.add(
+                "scrolled"
+            );
+
+        } else {
+
+            navbar.classList.remove(
+                "scrolled"
+            );
+
+        }
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+/* ===============================
+   REVEAL
+================================ */
+
+const revealElements =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                            .classList
+                            .add("active");
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: .12
+        }
+
+    );
+
+
+revealElements.forEach(
+    element => {
+
+        observer.observe(
+            element
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
